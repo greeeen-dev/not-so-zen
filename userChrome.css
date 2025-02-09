@@ -1,0 +1,101 @@
+@media (-moz-bool-pref: "unusable.theme.enabled") {
+  :root:not(:has(.tabbrowser-tab[image="chrome://global/skin/icons/settings.svg"])) {
+    @media (-moz-bool-pref: "unusable.theme.base") {
+      #browser {
+        background: white !important;
+      }
+
+      #urlbar, toolbarbutton, tab, #zen-current-workspace-indicator {
+        &:hover {
+          filter: blur(20px) !important;
+        }
+      }
+
+      #zen-tabbox-wrapper {
+        transform: rotate(0.3deg) !important;
+      }
+
+      browser {
+        filter: brightness(5) !important;
+      }
+
+      browser:hover {
+        filter: brightness(5) blur(20px) !important;
+      }
+
+      .tab-background {
+        background: none !important;
+        box-shadow: none !important;
+      }
+
+      .tab-text {
+        color: rgb(230, 230, 230) !important;
+      }
+
+      .toolbarbutton-icon, .toolbarbutton-animatable-box,
+      #downloads-indicator-anchor, .urlbar-icon, #tracking-protection-icon,
+      #identity-icon, .close-icon {
+        filter: invert(0.1) !important;
+
+        @media (prefers-color-scheme: light) {
+          filter: invert(0.9) !important;
+        }
+      }
+
+      .toolbarbutton-text, #zen-current-workspace-indicator-name, #urlbar-input {
+        color: rgb(230, 230, 230) !important;
+      }
+
+      .urlbarView {
+        display: none !important;
+      }
+    }
+
+    @media (-moz-bool-pref: "unusable.theme.hotdog") {
+      #browser {
+        background: red !important;
+      }
+
+      .tab-label {
+        color: rgba(150, 0, 0) !important;
+      }
+
+      .toolbarbutton-icon, .toolbarbutton-badge-stack {
+        background-color: yellow !important;
+
+        @media (prefers-color-scheme: dark) {
+          filter: invert(1) !important;
+          background-color: blue !important;
+        }
+
+        & > .toolbarbutton-icon {
+          background-color: yellow !important;
+          filter: invert(1) !important;
+        }
+      }
+
+      #PanelUI-menu-button .toolbarbutton-badge-stack .toolbarbutton-icon {
+        background-color: blue !important;
+        filter: none !important;
+
+        @media (prefers-color-scheme: light) {
+          background-color: yellow !important;
+        }
+      }
+
+      #urlbar-input {
+        color: yellow !important;
+      }
+
+      .tabbrowser-tab[selected] {
+        .tab-background {
+          background: yellow !important;
+        }
+
+        .tab-label {
+          color: white !important;
+        }
+      }
+    }
+  }
+}
